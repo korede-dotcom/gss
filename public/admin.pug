@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title 
+    link(rel="stylesheet", href="style.css")
+  body
+    .client_render 
+      h1 List of clients
+      ul
+      each datas, i in  data
+                li=datas.name
+                  li=datas.email
+                  li=datas.phone
+                  li=datas.subject
+                  li=datas.message
+                  
+                    
+    
