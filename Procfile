@@ -1,1 +1,1 @@
-web:node GPS/sever.js
+web:node gps/sever.js

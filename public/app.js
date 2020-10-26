@@ -5,13 +5,15 @@ const one = document.querySelector(".one");
 const readmore = document.querySelectorAll(".read_more");
 const threeText = document.querySelector(".three_text p");
 const cBtn = document.querySelector(".cancel i");
+const serviceBtn = document.querySelector(".service_box");
+const serviceItems = document.querySelector(".services .p");
 
 
 // const readmoreFuc = ()=>{
 //   readmore.forEach((read)=>{
 //     read.addEventListener("click",()=>{
 //       threeText.forEach((p)=>{
-//         const textC = document.createTextNode = "i love";
+//         const textC = document.createTextNode = "send us a mail info@globalstorageservice.com";
 //         p.innerHTML += textC;
 
 //       })
@@ -19,6 +21,15 @@ const cBtn = document.querySelector(".cancel i");
 //   })
 // }
 // readmoreFuc();
+
+const serviceBtnFuction = ()=>{
+  serviceBtn.addEventListener("click",(e)=>{
+  serviceItems.classList.toggle("slideback")
+  // serviceBtn.parentElement.style.transform = "translatex(-200px)";
+    
+  })
+}
+serviceBtnFuction();
 
 menuBtn.addEventListener("click", () => {
   nav.classList.toggle("slide");
@@ -47,18 +58,4 @@ menuBtn.addEventListener("click", () => {
  }
  cancelFunction();
 
- const slider = ()=>{
-  var elem = document.querySelector('.main-carousel');
-  var flkty = new Flickity( elem, {
-    // options
-    cellAlign: 'left',
-    contain: true
-  });
-  
-  // element argument can be a selector string
-  //   for an individual element
-  var flkty = new Flickity( '.main-carousel', {
-    // options
-  });
- }
- slider();
+ 

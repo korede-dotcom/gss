@@ -1,0 +1,29 @@
+.four {
+  display: grid;
+  place-items: center;
+  background-color: none;
+  background-image: none;
+}
+.two {
+  display: none;
+  background: none;
+}
+.login_form {
+  text-align: center;
+  padding: 1em;
+  background-color: #070b1f;
+  padding-top: 6em;
+}
+label {
+  color: lawngreen;
+}
+@media (max-width: 40em) {
+  .two {
+    display: none;
+    background: none;
+  }
+
+  .four {
+    margin-top: 5em;
+  }
+}

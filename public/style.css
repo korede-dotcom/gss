@@ -114,6 +114,7 @@ a {
   min-height: 100vh;
   background-repeat: no-repeat;
   background-image: url("http://globalstorageprovider.com/site/images/slides/s1_bg.jpg");
+  animation: ani 2.5s ease 3;
 }
 .two nav {
   background-color: #070b1f;
@@ -130,6 +131,7 @@ nav a {
   align-items: center;
   min-height: 90vh;
   padding: 2em;
+  text-transform: uppercase;
 }
 
 .img_slide h3 {
@@ -137,7 +139,9 @@ nav a {
   align-self: center;
   font-size: 50px;
   color: #fff;
+  animation: changeText 2.5s ease 2;
 }
+
 .img_slide a {
   background-color: var(--secondary-color);
   padding: 10px 20px;
@@ -475,12 +479,16 @@ footer {
   padding: 20px;
   background-color: #fff;
   transform: translateX(-500px);
+  border: 1px solid black;
 }
 .sidenav .as {
   display: flex;
   flex-direction: column;
-  flex-grow: 100%;
-  margin: auto;
+  justify-content: space-between;
+}
+
+.as a {
+  border: 1px solid black;
 }
 .client_render {
   display: grid;
@@ -678,18 +686,59 @@ footer {
   }
   .lists {
     text-transform: uppercase;
-    padding: 1em;
+    display: flex;
+    flex-direction: column;
   }
-  .carousel-cell {
-    height: 400px;
+  .services {
+    justify-content: space-between;
+    transition: all ease 0.5s;
+    align-items: center;
+    display: flex;
   }
-  .carousel-cell {
-    margin-right: 20px;
-    overflow: hidden;
+  .service_box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    border: 1px solid black;
+  }
+  .p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all linear 0.5s;
+    transform: translateX(200px);
+    display: none;
+  }
+  .services p {
+    font-size: 20px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    border-left: 1px solid black;
   }
 
-  .carousel-cell > * {
+  .slideback {
     display: block;
-    height: 200px;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes ani {
+  10% {
+    background-image: url("http://globalstorageprovider.com/site/images/slides/s2_bg.jpg");
+  }
+  50% {
+    background-image: url("http://www.globalstorageprovider.com/site/images/slides/image_900x600_01.jpg");
+  }
+  100% {
+    background-image: url("http://globalstorageprovider.com/site/images/slides/s1_bg.jpg");
+  }
+}
+@keyframes changeText {
+  from {
+    content: "we do";
+    transform: translateX(100%);
+  }
+  to {
   }
 }
