@@ -13,6 +13,7 @@ body {
   background-color: #fff;
   font-family: tahoma;
   scroll-behavior: smooth;
+  transition: 0.3s linear 0.5s;
 }
 i {
   color: var(--secondary-color);

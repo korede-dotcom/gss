@@ -17,6 +17,10 @@
 label {
   color: lawngreen;
 }
+.client_render ul li {
+  list-style-type: none;
+  border: 1px solid red;
+}
 @media (max-width: 40em) {
   .two {
     display: none;

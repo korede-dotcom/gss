@@ -8,13 +8,15 @@ html(lang='en')
   body
     .client_render 
       h1 List of clients
-      ul
+      hr
+      ol
       each datas, i in  data
                 li=datas.name
                   li=datas.email
                   li=datas.phone
                   li=datas.subject
                   li=datas.message
+      
                   
                     
     

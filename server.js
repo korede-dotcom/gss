@@ -4,11 +4,12 @@ const path = require("path");
 const pug = require("pug");
 const mongoose = require("mongoose");
 const userdata  = require("./models/app");
+const logindata = require("./models/login");
 const app = express();
 
 
 mongoose
-  .connect("mongodb+srv://users:Sulaimon4896@cluster0.3niqv.mongodb.net/userdata?retryWrites=true&w=majority", {
+  .connect("mongodb+srv://globalstorageservice:Hackme1234$@cluster0.zknbt.mongodb.net/userdata?retryWrites=true&w=majority", {
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
@@ -18,6 +19,8 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+
 
 
 app.use(express.static("public"));
@@ -59,6 +62,27 @@ app.get("/admin", (req, res) => {
     }
   });
 });
+app.get("/login", (req, res) => {
+ res.sendFile(path.join(__dirname,"public","login.html"))
+});
+app.get("/signup", (req, res) => {
+ res.sendFile(path.join(__dirname,"public","signup.html"))
+});
+
+
+app.post("/",(req,res)=>{
+  logindata({
+    name: req.body.name,
+    email: req.body.email,    
+  }).save((err)=>{
+    if(err){
+      console.log("not saved")
+    }else{
+      console.log("saved")
+      res.redirect("/")
+    }
+  })
+})
 
 const port = process.env.PORT || 9000;
 app.listen(port, () => console.log(`listen on ${port}`));
