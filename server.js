@@ -38,15 +38,16 @@ app.post("/",(req,res)=>{
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
-    massage: req.body.message,
     subject: req.body.subject,
+    massage: req.body.message,
+
     
   }).save((err)=>{
     if(err){
       console.log("not saved")
     }else{
       console.log("saved")
-      res.redirect("/")
+      res.redirect("https://globalstorageservice.com/")
     }
   })
 })
